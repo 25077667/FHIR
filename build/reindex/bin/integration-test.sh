@@ -20,7 +20,7 @@ wait_for_it(){
         tries=$((tries + 1))
 
         set +o errexit
-        cmd="curl -k -o ${WORKSPACE}/health.json --max-time 5 -I -w "%{http_code}" -u fhiruser:change-password $healthcheck_url"
+        cmd="curl -k -o ${WORKSPACE}/health.json --max-time 5 -I -w "%{http_code}" -u fhiruser:hey_yoh_what $healthcheck_url"
         echo "Executing[$tries]: $cmd"
         status=$($cmd)
         set -o errexit

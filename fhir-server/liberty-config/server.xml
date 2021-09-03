@@ -30,8 +30,8 @@
 
     <!-- IBM FHIR Server's keystore and truststore configuration -->
     <ssl id="defaultSSLConfig" keyStoreRef="defaultKeyStore" trustStoreRef="defaultTrustStore" clientAuthenticationSupported="true" sslProtocol="TLSv1.2"/>
-    <keyStore id="defaultKeyStore" location="${server.config.dir}/resources/security/fhirKeyStore.p12" password="change-password"/>
-    <keyStore id="defaultTrustStore" location="${server.config.dir}/resources/security/fhirTrustStore.p12" password="change-password"/>
+    <keyStore id="defaultKeyStore" location="${server.config.dir}/resources/security/fhirKeyStore.p12" password="hey_yoh_what"/>
+    <keyStore id="defaultTrustStore" location="${server.config.dir}/resources/security/fhirTrustStore.p12" password="hey_yoh_what"/>
 
     <!-- This entry defines the ports that the server will listen on.
         By default, the httpPort is disabled (set to "-1").
@@ -105,8 +105,8 @@
         maxAge="3600" />
 
     <!-- Variables for the users so they can be overriden by environment variables -->
-    <variable name="FHIR_USER_PASSWORD" defaultValue="change-password"/>
-    <variable name="FHIR_ADMIN_PASSWORD" defaultValue="change-password"/>
+    <variable name="FHIR_USER_PASSWORD" defaultValue="hey_yoh_what"/>
+    <variable name="FHIR_ADMIN_PASSWORD" defaultValue="hey_yoh_what"/>
 
     <!-- Define a basic user registry with a few users. -->
     <basicRegistry id="basic" realm="BasicRealm">

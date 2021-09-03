@@ -310,9 +310,9 @@
         "api": {
           "url": "https://localhost:9443/ibm/api/batch",
           "user": "fhiradmin",
-          "password": "change-password",
+          "password": "hey_yoh_what",
           "truststore": "resources/security/fhirTrustStore.p12",
-          "truststorePassword": "change-password",
+          "truststorePassword": "hey_yoh_what",
           "trustAll": true
         },
         "defaultImportProvider": "in",

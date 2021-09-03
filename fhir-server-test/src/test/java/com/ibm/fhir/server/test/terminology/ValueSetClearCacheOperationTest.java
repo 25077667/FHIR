@@ -33,15 +33,15 @@ public class ValueSetClearCacheOperationTest extends TerminologyOperationTestBas
      * Check that various parameter combinations work for clearing the cache.
      * 
      * <pre>
-     * curl -k -v -X PUT -u "fhiruser:change-password" -H 'Content-Type: application/fhir+json' -d {@literal @}src/test/resources/testdata/ValueSet-extensional.json 'https://localhost:9443/fhir-server/api/v4/ValueSet/179814145dd-affc9873-c326-43c3-bf0f-7d7d695644b5'
+     * curl -k -v -X PUT -u "fhiruser:hey_yoh_what" -H 'Content-Type: application/fhir+json' -d {@literal @}src/test/resources/testdata/ValueSet-extensional.json 'https://localhost:9443/fhir-server/api/v4/ValueSet/179814145dd-affc9873-c326-43c3-bf0f-7d7d695644b5'
      *
-     * curl -k -u "fhiruser:change-password" -v 'https://localhost:9443/fhir-server/api/v4/ValueSet/$clear-cache?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1114.7'
+     * curl -k -u "fhiruser:hey_yoh_what" -v 'https://localhost:9443/fhir-server/api/v4/ValueSet/$clear-cache?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1114.7'
      * 
-     * curl -k -u "fhiruser:change-password" -v 'https://localhost:9443/fhir-server/api/v4/ValueSet/$clear-cache?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1114.7|20200331'
+     * curl -k -u "fhiruser:hey_yoh_what" -v 'https://localhost:9443/fhir-server/api/v4/ValueSet/$clear-cache?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1114.7|20200331'
      * 
-     * curl -k -u "fhiruser:change-password" -v 'https://localhost:9443/fhir-server/api/v4/ValueSet/$clear-cache?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1114.7&valueSetVersion=20200331' 
+     * curl -k -u "fhiruser:hey_yoh_what" -v 'https://localhost:9443/fhir-server/api/v4/ValueSet/$clear-cache?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1114.7&valueSetVersion=20200331' 
      *
-     * curl -k -u "fhiruser:change-password" -v 'https://localhost:9443/fhir-server/api/v4/ValueSet/179814145dd-affc9873-c326-43c3-bf0f-7d7d695644b5/$clear-cache'
+     * curl -k -u "fhiruser:hey_yoh_what" -v 'https://localhost:9443/fhir-server/api/v4/ValueSet/179814145dd-affc9873-c326-43c3-bf0f-7d7d695644b5/$clear-cache'
      *
      * </pre>
      */
@@ -78,17 +78,17 @@ public class ValueSetClearCacheOperationTest extends TerminologyOperationTestBas
      * the cache is cleared.
      * 
      * <pre>
-     * curl -k -v -X PUT -u "fhiruser:change-password" -H 'Content-Type: application/fhir+json' -d {@literal @}src/test/resources/testdata/ValueSet-extensional.json 'https://localhost:9443/fhir-server/api/v4/ValueSet/179814145dd-affc9873-c326-43c3-bf0f-7d7d695644b5'
+     * curl -k -v -X PUT -u "fhiruser:hey_yoh_what" -H 'Content-Type: application/fhir+json' -d {@literal @}src/test/resources/testdata/ValueSet-extensional.json 'https://localhost:9443/fhir-server/api/v4/ValueSet/179814145dd-affc9873-c326-43c3-bf0f-7d7d695644b5'
      * 
-     * curl -k -u "fhiruser:change-password" -v 'https://localhost:9443/fhir-server/api/v4/ValueSet/179814145dd-affc9873-c326-43c3-bf0f-7d7d695644b5/$validate-code?code=9999&system=http://snomed.info/sct' 
+     * curl -k -u "fhiruser:hey_yoh_what" -v 'https://localhost:9443/fhir-server/api/v4/ValueSet/179814145dd-affc9873-c326-43c3-bf0f-7d7d695644b5/$validate-code?code=9999&system=http://snomed.info/sct' 
      * 
-     * curl -k -v -X PUT -u "fhiruser:change-password" -H 'Content-Type: application/fhir+json' -d {@literal @}src/test/resources/testdata/ValueSet-extensional-updated.json 'https://localhost:9443/fhir-server/api/v4/ValueSet/179814145dd-affc9873-c326-43c3-bf0f-7d7d695644b5'
+     * curl -k -v -X PUT -u "fhiruser:hey_yoh_what" -H 'Content-Type: application/fhir+json' -d {@literal @}src/test/resources/testdata/ValueSet-extensional-updated.json 'https://localhost:9443/fhir-server/api/v4/ValueSet/179814145dd-affc9873-c326-43c3-bf0f-7d7d695644b5'
      * 
-     * curl -k -u "fhiruser:change-password" -v 'https://localhost:9443/fhir-server/api/v4/ValueSet/179814145dd-affc9873-c326-43c3-bf0f-7d7d695644b5/$validate-code?code=9999&system=http://snomed.info/sct'
+     * curl -k -u "fhiruser:hey_yoh_what" -v 'https://localhost:9443/fhir-server/api/v4/ValueSet/179814145dd-affc9873-c326-43c3-bf0f-7d7d695644b5/$validate-code?code=9999&system=http://snomed.info/sct'
      * 
-     * curl -k -u "fhiruser:change-password" -v 'https://localhost:9443/fhir-server/api/v4/ValueSet/179814145dd-affc9873-c326-43c3-bf0f-7d7d695644b5/$clear-cache'
+     * curl -k -u "fhiruser:hey_yoh_what" -v 'https://localhost:9443/fhir-server/api/v4/ValueSet/179814145dd-affc9873-c326-43c3-bf0f-7d7d695644b5/$clear-cache'
      *      
-     * curl -k -u "fhiruser:change-password" -v 'https://localhost:9443/fhir-server/api/v4/ValueSet/179814145dd-affc9873-c326-43c3-bf0f-7d7d695644b5/$validate-code?code=9999&system=http://snomed.info/sct'
+     * curl -k -u "fhiruser:hey_yoh_what" -v 'https://localhost:9443/fhir-server/api/v4/ValueSet/179814145dd-affc9873-c326-43c3-bf0f-7d7d695644b5/$validate-code?code=9999&system=http://snomed.info/sct'
      * 
      * </pre>
      */
@@ -135,11 +135,11 @@ public class ValueSetClearCacheOperationTest extends TerminologyOperationTestBas
      * is currently interrupting this operation from getting updated data.
      * 
      * <pre>
-     * curl -k -v -X PUT -u "fhiruser:change-password" -H 'Content-Type: application/fhir+json' -d {@literal @}src/test/resources/testdata/ValueSet-intensional.json 'https://localhost:9443/fhir-server/api/v4/ValueSet/test-intensional'
+     * curl -k -v -X PUT -u "fhiruser:hey_yoh_what" -H 'Content-Type: application/fhir+json' -d {@literal @}src/test/resources/testdata/ValueSet-intensional.json 'https://localhost:9443/fhir-server/api/v4/ValueSet/test-intensional'
      * 
-     * curl -k -u "fhiruser:change-password" -v 'https://localhost:9443/fhir-server/api/v4/ValueSet/test-intensional/$expand' 
+     * curl -k -u "fhiruser:hey_yoh_what" -v 'https://localhost:9443/fhir-server/api/v4/ValueSet/test-intensional/$expand' 
      * 
-     * curl -k -v -X PUT -u "fhiruser:change-password" -H 'Content-Type: application/fhir+json' -d {@literal @}src/test/resources/testdata/ValueSet-intensional-updated.json 'https://localhost:9443/fhir-server/api/v4/ValueSet/test-intensional'
+     * curl -k -v -X PUT -u "fhiruser:hey_yoh_what" -H 'Content-Type: application/fhir+json' -d {@literal @}src/test/resources/testdata/ValueSet-intensional-updated.json 'https://localhost:9443/fhir-server/api/v4/ValueSet/test-intensional'
      * </pre>
      */
     @Test(groups = { TEST_GROUP_NAME })
@@ -173,17 +173,17 @@ public class ValueSetClearCacheOperationTest extends TerminologyOperationTestBas
      * Check that the expansion of an intensional value set is updated after the related code system resource changes.
      * 
      * <pre>
-     * curl -k -v -X PUT -u "fhiruser:change-password" -H 'Content-Type: application/fhir+json' -d {@literal @}src/test/resources/testdata/ValueSet-intensional.json 'https://localhost:9443/fhir-server/api/v4/ValueSet/test-intensional'
+     * curl -k -v -X PUT -u "fhiruser:hey_yoh_what" -H 'Content-Type: application/fhir+json' -d {@literal @}src/test/resources/testdata/ValueSet-intensional.json 'https://localhost:9443/fhir-server/api/v4/ValueSet/test-intensional'
      * 
-     * curl -k -u "fhiruser:change-password" -v 'https://localhost:9443/fhir-server/api/v4/ValueSet/test-intensional/$expand' 
+     * curl -k -u "fhiruser:hey_yoh_what" -v 'https://localhost:9443/fhir-server/api/v4/ValueSet/test-intensional/$expand' 
      * 
-     * curl -k -v -X PUT -u "fhiruser:change-password" -H 'Content-Type: application/fhir+json' -d {@literal @}src/test/resources/testdata/CodeSystem-test-updated.json 'https://localhost:9443/fhir-server/api/v4/ValueSet/test-intensional'
+     * curl -k -v -X PUT -u "fhiruser:hey_yoh_what" -H 'Content-Type: application/fhir+json' -d {@literal @}src/test/resources/testdata/CodeSystem-test-updated.json 'https://localhost:9443/fhir-server/api/v4/ValueSet/test-intensional'
      * 
-     * curl -k -u "fhiruser:change-password" -v 'https://localhost:9443/fhir-server/api/v4/ValueSet/test-intensional/$expand' 
+     * curl -k -u "fhiruser:hey_yoh_what" -v 'https://localhost:9443/fhir-server/api/v4/ValueSet/test-intensional/$expand' 
      * 
-     * curl -k -u "fhiruser:change-password" -v 'https://localhost:9443/fhir-server/api/v4/ValueSet/test-intensional/$clear-cache'
+     * curl -k -u "fhiruser:hey_yoh_what" -v 'https://localhost:9443/fhir-server/api/v4/ValueSet/test-intensional/$clear-cache'
      * 
-     * curl -k -u "fhiruser:change-password" -v 'https://localhost:9443/fhir-server/api/v4/ValueSet/test-intensional/$expand'
+     * curl -k -u "fhiruser:hey_yoh_what" -v 'https://localhost:9443/fhir-server/api/v4/ValueSet/test-intensional/$expand'
      * </pre>
      */
     @Test(groups = { TEST_GROUP_NAME })

@@ -51,7 +51,7 @@ public class PropertyGroupTest {
                         .add("fhir-server", BUILDER_FACTORY.createObjectBuilder()
                                 .add("server-core", BUILDER_FACTORY.createObjectBuilder()
                                         .add("truststoreLocation", "XYZ")
-                                        .add("truststorePassword", "change-password"))
+                                        .add("truststorePassword", "hey_yoh_what"))
                                 .add("notifications", BUILDER_FACTORY.createObjectBuilder()
                                         .add("common", BUILDER_FACTORY.createObjectBuilder()
                                                 .add("includeResourceTypes", BUILDER_FACTORY.createArrayBuilder()
@@ -62,7 +62,7 @@ public class PropertyGroupTest {
                                                 .add("connectionProperties", BUILDER_FACTORY.createObjectBuilder()
                                                         .add("groupId", "group1")
                                                         .add("bootstrap.servers", "localhost:1234")
-                                                        .add("change-password", "change-password"))))
+                                                        .add("hey_yoh_what", "hey_yoh_what"))))
                                 .add("object-array", BUILDER_FACTORY.createArrayBuilder()
                                         .add(BUILDER_FACTORY.createObjectBuilder()
                                                 .add("url", "http://localhost")
@@ -229,8 +229,8 @@ public class PropertyGroupTest {
 
         propEntry = properties.get(2);
         assertNotNull(propEntry);
-        assertEquals("change-password", propEntry.getName());
-        assertEquals("change-password", (String) propEntry.getValue());
+        assertEquals("hey_yoh_what", propEntry.getName());
+        assertEquals("hey_yoh_what", (String) propEntry.getValue());
     }
 
     @Test

@@ -8,7 +8,7 @@
                 "api": {
                     "url": "https://localhost:9443/ibm/api/batch",
                     "user": "fhiradmin",
-                    "password": "change-password",
+                    "password": "hey_yoh_what",
                     "truststore": "resources/security/fhirTrustStore.p12",
                     "truststore-password": "asdf", 
                     "trustAll": true
@@ -21,7 +21,7 @@
                 },
                 "pageSize": 100,
                 "_comment": "max of 1000",
-                "batchIdEncryptionKey": "change-password",
+                "batchIdEncryptionKey": "hey_yoh_what",
                 "maxPartitions": 3,
                 "maxInputs": 5,
                 "systemExportImpl": "none"

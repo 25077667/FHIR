@@ -7,7 +7,7 @@ Retrieved on 27 AUG 2020
 Check the Profiles are on the system: 
 
 ```
-$ curl -ks -u fhiruser:change-password https://localhost:9443/fhir-server/api/v4/metadata 2>&1 | jq -r '.rest[].resource[] | "\(.type),\(.supportedProfile)"' | grep -i us-core
+$ curl -ks -u fhiruser:hey_yoh_what https://localhost:9443/fhir-server/api/v4/metadata 2>&1 | jq -r '.rest[].resource[] | "\(.type),\(.supportedProfile)"' | grep -i us-core
 AllergyIntolerance,["http://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance|3.1.1"]
 CarePlan,["http://hl7.org/fhir/us/core/StructureDefinition/us-core-careplan|3.1.1"]
 CareTeam,["http://hl7.org/fhir/us/core/StructureDefinition/us-core-careteam|3.1.1"]

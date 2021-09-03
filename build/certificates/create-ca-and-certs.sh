@@ -7,7 +7,7 @@
 # ----------------------------------------------------------------------------
 
 # Root CA
-# Instead of using -passin pass:change-password -passout pass:change-password
+# Instead of using -passin pass:hey_yoh_what -passout pass:hey_yoh_what
 # opted for no password with nodes
 
 if [ ! -d ${WORKSPACE}/build/certificates/tmp ]
@@ -49,10 +49,10 @@ openssl x509 -in fhir-server-cert.pem -text | grep 'Subject:'
 cat fhir-server-cert.pem > fhir-server-chained.pem
 cat fhir-ca-crt.pem >> fhir-server-chained.pem
 
-openssl pkcs12 -export -out fhirKeyStore.p12 -inkey fhir-server-key.pem -in fhir-server-chained.pem -certfile fhir-ca-crt.pem -passout pass:change-password -name default
-openssl pkcs12 -export -out fhirTrustStore.p12 -in fhir-server-cert.pem -certfile fhir-ca-crt.pem -passout pass:change-password -nokeys
+openssl pkcs12 -export -out fhirKeyStore.p12 -inkey fhir-server-key.pem -in fhir-server-chained.pem -certfile fhir-ca-crt.pem -passout pass:hey_yoh_what -name default
+openssl pkcs12 -export -out fhirTrustStore.p12 -in fhir-server-cert.pem -certfile fhir-ca-crt.pem -passout pass:hey_yoh_what -nokeys
 
-keytool -keystore fhirTrustStore.p12 -alias ca-root -import -file fhir-ca-crt.pem -storepass change-password -keypass change-password -noprompt
+keytool -keystore fhirTrustStore.p12 -alias ca-root -import -file fhir-ca-crt.pem -storepass hey_yoh_what -keypass hey_yoh_what -noprompt
 
 # User
 echo "FHIR User - certs are being generated and signed"
@@ -60,9 +60,9 @@ openssl req -newkey rsa:${BITS} -days ${DAYS} -nodes -sha512 -keyout fhir-client
 openssl x509 -req -in fhir-client-req.pem -days ${DAYS} -sha512 -CA fhir-ca-crt.pem -CAkey fhir-ca-key.pem -days 10960 -CAcreateserial -out fhir-client-cert.pem
 openssl x509 -in fhir-client-cert.pem -text | grep 'Subject:'
 
-openssl pkcs12 -export -out fhirClientKeyStore.p12 -inkey fhir-client-key.pem -in fhir-client-cert.pem -certfile fhir-ca-crt.pem -passout pass:change-password -name client-auth
+openssl pkcs12 -export -out fhirClientKeyStore.p12 -inkey fhir-client-key.pem -in fhir-client-cert.pem -certfile fhir-ca-crt.pem -passout pass:hey_yoh_what -name client-auth
 
-keytool -keystore fhirTrustStore.p12 -alias client-auth -import -file fhir-ca-cert.pem -storepass change-password -keypass change-password -noprompt
+keytool -keystore fhirTrustStore.p12 -alias client-auth -import -file fhir-ca-cert.pem -storepass hey_yoh_what -keypass hey_yoh_what -noprompt
 
 # Kafka Client
 echo "FHIR Kafka Client - certs are being generated and signed"
@@ -70,14 +70,14 @@ openssl req -newkey rsa:${BITS} -days ${DAYS} -nodes -sha512 -keyout fhir-kafka-
 openssl x509 -req -in fhir-kafka-client-req.pem -days ${DAYS} -sha512 -CA fhir-ca-crt.pem -CAkey fhir-ca-key.pem -days 10960 -CAcreateserial -out fhir-kafka-client-cert.pem
 openssl x509 -in fhir-kafka-client-cert.pem -text | grep 'Subject:'
 
-openssl pkcs12 -export -out kafka.client.keystore.p12 -inkey fhir-kafka-client-key.pem -in fhir-kafka-client-cert.pem -certfile fhir-ca-crt.pem -passout pass:change-password -name server
-openssl pkcs12 -export -out kafka.client.truststore.p12 -in fhir-kafka-client-cert.pem -certfile fhir-ca-crt.pem -passout pass:change-password -nokeys
+openssl pkcs12 -export -out kafka.client.keystore.p12 -inkey fhir-kafka-client-key.pem -in fhir-kafka-client-cert.pem -certfile fhir-ca-crt.pem -passout pass:hey_yoh_what -name server
+openssl pkcs12 -export -out kafka.client.truststore.p12 -in fhir-kafka-client-cert.pem -certfile fhir-ca-crt.pem -passout pass:hey_yoh_what -nokeys
 
 # Update the Trust Store
-keytool -keystore fhirTrustStore.p12 -alias server-ca -import -file fhir-server-cert.pem -storepass change-password -keypass change-password -noprompt
+keytool -keystore fhirTrustStore.p12 -alias server-ca -import -file fhir-server-cert.pem -storepass hey_yoh_what -keypass hey_yoh_what -noprompt
 
-keytool -keystore fhirTrustStore.p12 -alias client-ca -import -file fhir-client-cert.pem -storepass change-password -keypass change-password -noprompt
+keytool -keystore fhirTrustStore.p12 -alias client-ca -import -file fhir-client-cert.pem -storepass hey_yoh_what -keypass hey_yoh_what -noprompt
 
-keytool -keystore fhirTrustStore.p12 -alias minio-ca -import -file fhir-minio-cert.pem -storepass change-password -keypass change-password -noprompt
+keytool -keystore fhirTrustStore.p12 -alias minio-ca -import -file fhir-minio-cert.pem -storepass hey_yoh_what -keypass hey_yoh_what -noprompt
 
 # EOF

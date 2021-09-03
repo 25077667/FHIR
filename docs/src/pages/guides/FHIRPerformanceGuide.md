@@ -140,7 +140,7 @@ The recommended approach for tenant datatstore configuration is to use individua
                  portNumber="5432"
                  databaseName="fhirdb"
                  user="fhirserver"
-                 password="change-password"
+                 password="hey_yoh_what"
                  currentSchema="fhirdata"
                  ssl="true"
                  sslmode="require"
@@ -909,7 +909,7 @@ If multiple resource types are of interest, consider packaging multiple search r
 curl -k -i \
 -H 'Content-Type: application/json' \
 -H 'X-FHIR-TENANT-ID: default' \
--u 'fhiruser:change-password' 'https://localhost:9443/fhir-server/api/v4/Practitioner/1749321b933-9fd77253-7fd4-47db-8ff8-9e4ccb21441d'
+-u 'fhiruser:hey_yoh_what' 'https://localhost:9443/fhir-server/api/v4/Practitioner/1749321b933-9fd77253-7fd4-47db-8ff8-9e4ccb21441d'
 ```
 
 Note that the tenant header must match the tenant header defined in the fhir-server-config.json. The default tenant header is `X-FHIR-TENANT-ID`. If this header is not provided, the tenant value will be `default`.
@@ -920,7 +920,7 @@ The curl command can also be used to make POST calls to the IBM FHIR Server. Thi
 curl -k -i \
 -H 'Content-Type: application/json' \
 -H 'X-FHIR-TENANT-ID: default' \
--u 'fhiruser:change-password' 'https://localhost:9443/fhir-server/api/v4/Observation' -d '
+-u 'fhiruser:hey_yoh_what' 'https://localhost:9443/fhir-server/api/v4/Observation' -d '
 {
     "resourceType": "Observation",
     "subject": {

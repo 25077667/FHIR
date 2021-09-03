@@ -11,7 +11,7 @@ date:   2021-06-07
 
 This installation is for curiosity only and should not be used with PHI, only synthetic test data. Production instances require additional hardening which is outside the scope of this guide. 
 
-The default password used throughout is `change-password` and this is configured as clear-text in the configuration files to make it even more obvious that it should be changed as part of any hardening. Refer to the [FHIRServerUsersGuide](https://ibm.github.io/FHIR/guides/FHIRServerUsersGuide) for more details.
+The default password used throughout is `hey_yoh_what` and this is configured as clear-text in the configuration files to make it even more obvious that it should be changed as part of any hardening. Refer to the [FHIRServerUsersGuide](https://ibm.github.io/FHIR/guides/FHIRServerUsersGuide) for more details.
 
 ## Introduction
 
@@ -28,7 +28,7 @@ The IBM FHIR Server runs as a web application in the Open Liberty application se
 | Application Server | Open Liberty 19.0.0.8 |
 | HTTPS Port | 9443 |
 | Default user | fhiruser |
-| Default password | change-password |
+| Default password | hey_yoh_what |
 
 Set up your Raspberry Pi 4 (4GB model) using Raspbian (https://www.raspberrypi.org/downloads/).
 
@@ -230,7 +230,7 @@ Create a new patient resource using the following POST. The FHIR server will all
 ```
 curl -k \
 -H 'Content-Type: application/json' \
--u 'fhiruser:change-password' 'https://localhost:9443/fhir-server/api/v4/Patient' -d '
+-u 'fhiruser:hey_yoh_what' 'https://localhost:9443/fhir-server/api/v4/Patient' -d '
 {
     "resourceType" : "Patient",
     "active" : true,
@@ -261,7 +261,7 @@ Use the `location:` value returned from **your** POST to read back the resource:
 Command (example):
 
 ```
-curl --silent -k -H 'Accept: application/json' -u 'fhiruser:change-password' 'https://localhost:9443/fhir-server/api/v4/Patient/041786ad-d6a1-42ea-bf47-4dd8eb08a5fc' | python -m json.tool
+curl --silent -k -H 'Accept: application/json' -u 'fhiruser:hey_yoh_what' 'https://localhost:9443/fhir-server/api/v4/Patient/041786ad-d6a1-42ea-bf47-4dd8eb08a5fc' | python -m json.tool
 ```
 
 > Remember to use the patient logical id returned as the location: header in your POST - if you try to use `041786ad-d6a1-42ea-bf47-4dd8eb08a5fc` the response status will be Not Found.
@@ -295,7 +295,7 @@ Now we can update the resource using a PUT (David => Dave). Again, it is importa
 curl -k -i \
 -X PUT \
 -H 'Content-Type: application/json' \
--u 'fhiruser:change-password' 'https://localhost:9443/fhir-server/api/v4/Patient/041786ad-d6a1-42ea-bf47-4dd8eb08a5fc' -d '
+-u 'fhiruser:hey_yoh_what' 'https://localhost:9443/fhir-server/api/v4/Patient/041786ad-d6a1-42ea-bf47-4dd8eb08a5fc' -d '
 {
     "active": true,
     "gender": "male",
@@ -334,12 +334,12 @@ Note the location: has now changed to indicate the new version is 2.
 Retrieve the latest version:
 
 ```
-curl --silent -k -H 'Accept: application/json' -u 'fhiruser:change-password' 'https://localhost:9443/fhir-server/api/v4/Patient/041786ad-d6a1-42ea-bf47-4dd8eb08a5fc' | python -m json.tool
+curl --silent -k -H 'Accept: application/json' -u 'fhiruser:hey_yoh_what' 'https://localhost:9443/fhir-server/api/v4/Patient/041786ad-d6a1-42ea-bf47-4dd8eb08a5fc' | python -m json.tool
 ```
 
 Response:
 ```
-curl --silent -k -H 'Accept: application/json' -u 'fhiruser:change-password' 'https://localhost:9443/fhir-server/api/v4/Patient/041786ad-d6a1-42ea-bf47-4dd8eb08a5fc' | python -m json.tool
+curl --silent -k -H 'Accept: application/json' -u 'fhiruser:hey_yoh_what' 'https://localhost:9443/fhir-server/api/v4/Patient/041786ad-d6a1-42ea-bf47-4dd8eb08a5fc' | python -m json.tool
 {
     "active": true,
     "gender": "male",
@@ -366,7 +366,7 @@ Note that the given name is "Dave".
 To see a previous version, perform a vread:
 
 ```
-curl --silent -k -H 'Accept: application/json' -u 'fhiruser:change-password' 'https://localhost:9443/fhir-server/api/v4/Patient/041786ad-d6a1-42ea-bf47-4dd8eb08a5fc/_history/1' | python -m json.tool
+curl --silent -k -H 'Accept: application/json' -u 'fhiruser:hey_yoh_what' 'https://localhost:9443/fhir-server/api/v4/Patient/041786ad-d6a1-42ea-bf47-4dd8eb08a5fc/_history/1' | python -m json.tool
 
 ```
 
@@ -399,7 +399,7 @@ In version 1, we see that the given name is the original value of "David".
 All the versions of the resource can be read using a history read operation:
 
 ```
-curl --silent -k -H 'Accept: application/json' -u 'fhiruser:change-password' 'https://localhost:9443/fhir-server/api/v4/Patient/041786ad-d6a1-42ea-bf47-4dd8eb08a5fc/_history' | python -m json.tool
+curl --silent -k -H 'Accept: application/json' -u 'fhiruser:hey_yoh_what' 'https://localhost:9443/fhir-server/api/v4/Patient/041786ad-d6a1-42ea-bf47-4dd8eb08a5fc/_history' | python -m json.tool
 ```
 
 The response is a FHIR bundle resource containing both versions of the Patient. Note the name change from David (version 1) to Dave (version 2):

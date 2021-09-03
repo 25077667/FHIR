@@ -23,7 +23,7 @@ docker-compose up -d db
 # Startup
 docker-compose run tool --tool.behavior=onboard --db.type=postgresql  \
     --db.host=db --db.port=5432 --db.database=fhirdb --schema.name.fhir=fhirdata \
-    --user=postgres --password=change-password
+    --user=postgres --password=hey_yoh_what
 
 # Check the log
 

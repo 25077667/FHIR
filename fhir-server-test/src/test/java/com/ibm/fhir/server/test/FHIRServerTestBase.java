@@ -90,11 +90,11 @@ public abstract class FHIRServerTestBase {
 
     // Default values for FHIRClient properties that we use here.
     private static final String DEFAULT_TRUSTSTORE_LOCATION = "fhirClientTruststore.jks";
-    private static final String DEFAULT_TRUSTSTORE_PASSWORD = "change-password";
+    private static final String DEFAULT_TRUSTSTORE_PASSWORD = "hey_yoh_what";
     private static final String DEFAULT_KEYSTORE_LOCATION = "fhirClientKeystore.jks";
-    private static final String DEFAULT_KEYSTORE_PASSWORD = "change-password";
+    private static final String DEFAULT_KEYSTORE_PASSWORD = "hey_yoh_what";
     private static final String DEFAULT_USERNAME = "fhiruser";
-    private static final String DEFAULT_PASSWORD = "change-password";
+    private static final String DEFAULT_PASSWORD = "hey_yoh_what";
 
     // Constants that define test property names.
     private static final String PROPNAME_REST_BASE_URL = "fhirclient.rest.base.url";

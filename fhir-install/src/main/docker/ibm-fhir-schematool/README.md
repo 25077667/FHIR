@@ -60,7 +60,7 @@ The configuration file is as follows in the examples configuration.
                 "port": "50000",
                 "database": "fhirdb",
                 "user": "db2inst1",
-                "password": "change-password",
+                "password": "hey_yoh_what",
                 "type": "db2",
                 "ssl": "false",
                 "certificate_base64": "empty"
@@ -161,7 +161,7 @@ Using arguments on the commandline
 
 ``` shell
 docker run ibmcom/ibm-fhir-schematool:latest --tool.behavior=offboard --db.host=172.17.0.3 \
-    --db.port=50000 --user=db2inst1 --password=change-password --db.database=fhirdb \
+    --db.port=50000 --user=db2inst1 --password=hey_yoh_what --db.database=fhirdb \
     --sslConnection=false --db.type=db2 --schema.name.fhir=fhirdata --grant.to=fhirserver \
     --tenant.name=default2 2>&1 | tee out.log
 ```
@@ -188,7 +188,7 @@ Using arguments on the commandline
 
 ``` shell
 docker run ibmcom/ibm-fhir-schematool:latest --tool.behavior=onboard --db.host=172.17.0.3 \
-    --db.port=50000 --user=db2inst1 --password=change-password --db.database=fhirdb \
+    --db.port=50000 --user=db2inst1 --password=hey_yoh_what --db.database=fhirdb \
     --sslConnection=false --db.type=db2 --schema.name.fhir=fhirdata --grant.to=fhirserver \
     --tenant.name=default2 2>&1 | tee out.log
 ```
@@ -199,7 +199,7 @@ The custom behavior only supports commandline arguments:
 
 ``` shell
 docker run ibmcom/ibm-fhir-schematool:latest --tool.behavior=onboard --list-tenants \
-    --db.host=1000.com --db.password=change-password --db.user=db2inst1
+    --db.host=1000.com --db.password=hey_yoh_what --db.user=db2inst1
 ```
 
 ************

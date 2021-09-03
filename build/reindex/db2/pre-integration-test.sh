@@ -46,7 +46,7 @@ config(){
     # Move over the test configurations
     echo "Copying over the fhir-server-config.json and updating publishing"
     jq '.fhirServer.notifications.nats.enabled = false' ${DIST}/config/default/fhir-server-config-db2.json > ${DIST}/config/default/fhir-server-config-t.json
-    jq '.fhirServer.persistence.datasources.default.tenantKey = "change-password"' ${DIST}/config/default/fhir-server-config-t.json > ${DIST}/config/default/fhir-server-config.json
+    jq '.fhirServer.persistence.datasources.default.tenantKey = "hey_yoh_what"' ${DIST}/config/default/fhir-server-config-t.json > ${DIST}/config/default/fhir-server-config.json
 
     if [ $(jq -r '.fhirServer.core.serverRegistryResourceProviderEnabled' ${DIST}/config/default/fhir-server-config.json) = 'true' ]
     then 
@@ -131,7 +131,7 @@ bringup(){
         tries=$((tries + 1))
 
         set +o errexit
-        cmd="curl -k -o ${WORKSPACE}/health.json --max-time 5 -I -w "%{http_code}" -u fhiruser:change-password $healthcheck_url"
+        cmd="curl -k -o ${WORKSPACE}/health.json --max-time 5 -I -w "%{http_code}" -u fhiruser:hey_yoh_what $healthcheck_url"
         echo "Executing[$tries]: $cmd"
         status=$($cmd)
         set -o errexit

@@ -19,10 +19,10 @@ services:
       - 9000:9000
     environment:
     - sonar.jdbc.username=sonar
-    - sonar.jdbc.password=change-password
+    - sonar.jdbc.password=hey_yoh_what
     - sonar.jdbc.url=jdbc:postgresql://db/sonar
     - sonar.login=fhir-ops
-    - sonar.password=change-password
+    - sonar.password=hey_yoh_what
     - sonar.telemetry.enable=false
     volumes:
       - type: bind
@@ -37,7 +37,7 @@ services:
     hostname: sonarqube-db
     environment:
       - POSTGRES_USER=sonar
-      - POSTGRES_PASSWORD=change-password
+      - POSTGRES_PASSWORD=hey_yoh_what
     volumes:
       - type: bind
         source: ./resources/db

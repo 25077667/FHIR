@@ -139,9 +139,9 @@ By default, we include:
 * `configDropins` with server.xml dropins sorted into `disabled`, `defaults`, and `overrides`
 
 ## 3.1.1 Encoded passwords
-In the examples within the following sections, you'll see the default password `change-password`. In order to secure your server, these values should be changed.
+In the examples within the following sections, you'll see the default password `hey_yoh_what`. In order to secure your server, these values should be changed.
 
-For example, the basic user registry in the default server.xml defines users `fhiruser` and `fhiradmin` and variables FHIR_USER_PASSWORD and FHIR_ADMIN_PASSWORD, each with a default value of `change-password`.
+For example, the basic user registry in the default server.xml defines users `fhiruser` and `fhiradmin` and variables FHIR_USER_PASSWORD and FHIR_ADMIN_PASSWORD, each with a default value of `hey_yoh_what`.
 
 These variables can be changed by setting environment variables by the same name.
 Alternatively, users can change the server.xml or use Liberty configDropins to change the values.
@@ -279,7 +279,7 @@ For example, the fhir-server-config snippet from above would have a correspondin
              portNumber="5432"
              databaseName="fhirdb"
              user="fhirserver"
-             password="change-password"
+             password="hey_yoh_what"
              currentSchema="fhirdata"
          />
         <connectionManager maxPoolSize="200" minPoolSize="40"/>
@@ -451,7 +451,7 @@ Furthermore, the REST API consumers associated with Acme applications will be co
             serverName="dbserver1"
             portNumber="50000"
             user="db2inst1"
-            password="change-password"
+            password="hey_yoh_what"
             databaseName="ACMESTUDY1"
             currentSchema="DB2INST1"
             driverType="4"
@@ -468,7 +468,7 @@ Furthermore, the REST API consumers associated with Acme applications will be co
             serverName="dbserver1"
             portNumber="50000"
             user="db2inst1"
-            password="change-password"
+            password="hey_yoh_what"
             databaseName="ACMESTUDY2"
             currentSchema="DB2INST1"
             driverType="4"
@@ -621,10 +621,10 @@ The Kafka implementation of the notification service will publish notification e
                     "bootstrap.servers":"localhost:9093",
                     "security.protocol":"SSL",
                     "ssl.truststore.location":"resources/security/kafka.client.truststore.jks",
-                    "ssl.truststore.password":"change-password",
+                    "ssl.truststore.password":"hey_yoh_what",
                     "ssl.keystore.location":"resources/security/kafka.client.keystore.jks",
-                    "ssl.keystore.password":"change-password",
-                    "ssl.key.password":"change-password",
+                    "ssl.keystore.password":"hey_yoh_what",
+                    "ssl.key.password":"hey_yoh_what",
                     "ssl.truststore.type":"JKS",
                     "ssl.keystore.type":"JKS"
                 }
@@ -665,9 +665,9 @@ The [NATS](http://nats.io) implementation of the notification service publishes 
 		        "servers": "nats://nats-node1:4222,nats://nats-node2:4222,nats://nats-node3:4222",
 		        "useTLS": true,
 		        "truststoreLocation": "resources/security/nats.client.truststore.p12",
-		        "truststorePassword": "change-password",
+		        "truststorePassword": "hey_yoh_what",
 		        "keystoreLocation": "resources/security/nats.client.keystore.p12",
-		        "keystorePassword": "change-password"
+		        "keystorePassword": "hey_yoh_what"
     }
         ...
     }
@@ -1193,9 +1193,9 @@ The Bulk Data web application writes the exported FHIR resources to an IBM Cloud
         "api": {
             "url": "https://localhost:9443/ibm/api/batch",
             "user": "fhiradmin",
-            "password": "change-password",
+            "password": "hey_yoh_what",
             "truststore": "resources/security/fhirTrustStore.p12",
-            "truststorePassword": "change-password"
+            "truststorePassword": "hey_yoh_what"
         },
         "cos" : {
             "useServerTruststore": true
@@ -2443,22 +2443,22 @@ To properly configure the FHIR server's keystore and truststore files, perform t
     The following command will generate a new self-signed certificate and store it in `serverKeystore.jks`:
 
     ```
-    keytool -keystore serverKeystore.jks -storepass change-password -genkey
-        -alias default -keyalg RSA -keypass change-password
+    keytool -keystore serverKeystore.jks -storepass hey_yoh_what -genkey
+        -alias default -keyalg RSA -keypass hey_yoh_what
     ```
 
 2.  Export the server certificate so that it can be imported into the client's truststore:
 
     ```
-    keytool -keystore serverKeystore.jks -storepass change-password -export
+    keytool -keystore serverKeystore.jks -storepass hey_yoh_what -export
         -alias default -file server-public-key.cer
     ```
 
 3.  Create the client's certificate and store it in `clientKeystore.jks`:
 
     ```
-    keytool -keystore clientKeystore.jks -storepass change-password -genkey
-        -alias client-auth -keyalg RSA -keypass change-password
+    keytool -keystore clientKeystore.jks -storepass hey_yoh_what -genkey
+        -alias client-auth -keyalg RSA -keypass hey_yoh_what
     ```
 
     Note: `keytool` will prompt you for the various components of the distinguished name (DN) associated with the certificate (similar to Step 1). The value that you specify for the common name (CN) component of the DN must match a username in the basic user registry<sup id="a10">[10](#f10)</sup> configured within the `server.xml` file. This step is crucial for the client certificate-based authentication to work properly. The whole point of this authentication scheme is for the client to transmit its identity to the server via the client certificate, and the client's username must be contained in that certificate (the CN component of the DN) so that the FHIR server can properly authenticate the client.
@@ -2466,19 +2466,19 @@ To properly configure the FHIR server's keystore and truststore files, perform t
 4.  Export the client's certificate so that it can be imported into the server's truststore:
 
     ```
-    keytool -keystore clientKeystore.jks -storepass change-password -export -alias client-auth -file client-public-key.cer
+    keytool -keystore clientKeystore.jks -storepass hey_yoh_what -export -alias client-auth -file client-public-key.cer
     ```
 
 5.  Import the server's public key certificate into the client's truststore:
 
     ```
-    keytool -keystore clientTruststore.jks -storepass change-password -import -file server-public-key.cer
+    keytool -keystore clientTruststore.jks -storepass hey_yoh_what -import -file server-public-key.cer
     ```
 
 6.  Import the client's public key certificate into the server's truststore:
 
     ```
-    keytool -keystore serverTruststore.jks -storepass change-password -import -file client-public-key.cer
+    keytool -keystore serverTruststore.jks -storepass hey_yoh_what -import -file client-public-key.cer
     ```
 
 At this point, you should have a client keystore that contains a client certificate whose Distinguished Name's Common Name component is set to the username. You should also have a client truststore which contains the server's public key certificate. Essentially, the server and client both have a keystore that contains their own private and public key certificate and they both have a truststore which contains the public key certificate of their counterpart.

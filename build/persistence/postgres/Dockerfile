@@ -27,10 +27,10 @@ RUN chmod 755 /docker-entrypoint.sh
 
 # Add the fhiradmin user
 RUN addgroup -S fhir && adduser -S fhiradmin -G fhir
-RUN echo "fhiradmin:change-password" | chpasswd
+RUN echo "fhiradmin:hey_yoh_what" | chpasswd
 
 # Add the fhirserver user
 RUN adduser -S fhirserver -G fhir
-RUN echo "fhirserver:change-password" | chpasswd
+RUN echo "fhirserver:hey_yoh_what" | chpasswd
 
 ENTRYPOINT ["/docker-entrypoint.sh"]

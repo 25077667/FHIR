@@ -167,7 +167,7 @@ while ( ($STATUS -ne 200) -and ($tries -le $MAX_TRIES) ) {
     Write-Host 'Executing[' $tries ']: server check'
 
     # Execute the connection to the HTTP Endpoint
-    $UserPassword = 'fhiruser:change-password'
+    $UserPassword = 'fhiruser:hey_yoh_what'
     $bytes = [System.Text.Encoding]::ASCII.GetBytes($UserPassword)
     $base64 = [System.Convert]::ToBase64String($bytes)
     $req = Invoke-WebRequest -Method Get -Uri $metadata_url -Headers @{"Authorization" = "Basic $base64"; "Content-Type" = "application/json"} -UseBasicParsing

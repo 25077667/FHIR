@@ -13,9 +13,9 @@ In fhir-server/liberty-config/config/default/fhir-server-config.json, find the d
         "servers": "nats://nats-node1:4222,nats://nats-node2:4222,nats://nats-node3:4222",
         "useTLS": false,
         "truststoreLocation": "resources/security/nats.client.truststore.p12",
-        "truststorePassword": "change-password",
+        "truststorePassword": "hey_yoh_what",
         "keystoreLocation": "resources/security/nats.client.keystore.p12",
-        "keystorePassword": "change-password"
+        "keystorePassword": "hey_yoh_what"
     }
 ```
 
@@ -34,7 +34,7 @@ node nats-subscriber
 To use TLS (which you must do if your NATS streaming cluster requires TLS) set "useTLS" to true in fhir-server-config.json and provide client truststore and keystore locations and passwords as the remaining config values.  Furthermore, to use TLS to connect to a NATS cluster, that NATS cluster must be enabled to use TLS.  The example above does not use TLS.
 
 ### Create a truststore and keystore
-On MacOS, install the [mkcert tool](https://github.com/FiloSottile/mkcert) with `brew install mkcert`, then follow these steps to create a Java keystore and truststore for use with NATS.  You also need Java keytool and openssl installed. Set change-password to be any value.
+On MacOS, install the [mkcert tool](https://github.com/FiloSottile/mkcert) with `brew install mkcert`, then follow these steps to create a Java keystore and truststore for use with NATS.  You also need Java keytool and openssl installed. Set hey_yoh_what to be any value.
 1. Install the CA locally
 ```shell
 ./mkcert -install
@@ -48,27 +48,27 @@ On MacOS, install the [mkcert tool](https://github.com/FiloSottile/mkcert) with 
 1. Create the java trust store
 ```shell
 keytool -keystore nats.client.truststore.p12 -alias CARoot -import -file ./rootCA.pem -storepass \
-    change-password -noprompt -storetype pkcs12
+    hey_yoh_what -noprompt -storetype pkcs12
 ```
 
 1. Convert the cert from pem to pkcs12
 ```shell
 cat ./fhir-key.pem ./fhir-cert.pem > combined.pem
-openssl pkcs12 -export -in combined.pem -out cert.p12 -passin pass:change-password \
-    -passout pass:change-password
+openssl pkcs12 -export -in combined.pem -out cert.p12 -passin pass:hey_yoh_what \
+    -passout pass:hey_yoh_what
 ```
 
 1. Import the pkcs12 cert into a new keystore
 ```shell
 keytool -importkeystore -srckeystore cert.p12 -srcstoretype pkcs12 -deststoretype pkcs12 \
-   -destkeystore nats.client.keystore.p12 -srcstorepass change-password -deststorepass \
-   change-password
+   -destkeystore nats.client.keystore.p12 -srcstorepass hey_yoh_what -deststorepass \
+   hey_yoh_what
 ```
 
 1. Import the CA cert into the keystore & clean up
 ```shell
 keytool -keystore nats.client.keystore.p12 -alias CARoot -import -file ./rootCA.pem -storepass \
-    change-password -noprompt
+    hey_yoh_what -noprompt
 rm cert.p12 combined.pem  
 ```
 

@@ -63,10 +63,10 @@
                     "bootstrap.servers": "localhost:9093",
                     "security.protocol": "SSL",
                     "ssl.truststore.location": "resources/security/kafka.client.truststore.p12",
-                    "ssl.truststore.password": "change-password",
+                    "ssl.truststore.password": "hey_yoh_what",
                     "ssl.keystore.location": "resources/security/kafka.client.keystore.p12",
-                    "ssl.keystore.password": "change-password",
-                    "ssl.key.password": "change-password",
+                    "ssl.keystore.password": "hey_yoh_what",
+                    "ssl.key.password": "hey_yoh_what",
                     "ssl.truststore.type": "PKCS12",
                     "ssl.keystore.type": "PKCS12",
                     "acks": "all",
@@ -84,9 +84,9 @@
                 "servers": "nats://nats-node1:4222,nats://nats-node2:4222,nats://nats-node3:4222",
                 "useTLS": false,
                 "truststoreLocation": "resources/security/nats.client.truststore.jks",
-                "truststorePassword": "change-password",
+                "truststorePassword": "hey_yoh_what",
                 "keystoreLocation": "resources/security/nats.client.keystore.jks",
-                "keystorePassword": "change-password"
+                "keystorePassword": "hey_yoh_what"
             }
         },
         "audit": {
@@ -123,9 +123,9 @@
                 "api": {
                     "url": "https://localhost:9443/ibm/api/batch",
                     "user": "fhiradmin",
-                    "password": "change-password",
+                    "password": "hey_yoh_what",
                     "truststore": "resources/security/fhirTrustStore.p12",
-                    "truststorePassword": "change-password", 
+                    "truststorePassword": "hey_yoh_what", 
                     "trustAll": true
                 },
                 "cos" : { 
@@ -140,7 +140,7 @@
                     "resourceCountThreshold": 200000
                 },
                 "pageSize": 100,
-                "batchIdEncryptionKey": "change-password",
+                "batchIdEncryptionKey": "hey_yoh_what",
                 "maxPartitions": 3, 
                 "maxInputs": 5
             },
@@ -165,7 +165,7 @@
                     "auth" : {
                         "type": "hmac",
                         "accessKeyId": "minio",
-                        "secretAccessKey": "change-password"
+                        "secretAccessKey": "hey_yoh_what"
                     },
                     "enableParquet": false,
                     "disableBaseUrlValidation": true,

@@ -9,7 +9,7 @@
              portNumber="5432"
              databaseName="fhirdb"
              user="fhirserver"
-             password="change-password"
+             password="hey_yoh_what"
              currentSchema="fhirdata"
          />
         <connectionManager maxPoolSize="200" minPoolSize="40"/>
@@ -25,7 +25,7 @@
             portNumber="5432"
             databaseName="fhirdb"
             user="fhiradmin"
-            password="change-password"
+            password="hey_yoh_what"
           />
     </dataSource>
 </server>

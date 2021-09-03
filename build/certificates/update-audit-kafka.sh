@@ -14,7 +14,7 @@ create_kafka_ci() {
     # Update the Kafka JKS
     cd $WORKSPACE/build/audit/kafka/resources
     # Generate CA key
-    openssl req -new -newkey rsa:4096 -x509 -keyout kafka-test-1.key -out kafka-test-1.crt -days 10960 -subj '/CN=ca1.test.fhir.ibm.com/OU=TEST/O=IBM FHIR SERVER/L=CAMBRIDGE/ST=MA/C=US' -passin pass:change-password -passout pass:change-password
+    openssl req -new -newkey rsa:4096 -x509 -keyout kafka-test-1.key -out kafka-test-1.crt -days 10960 -subj '/CN=ca1.test.fhir.ibm.com/OU=TEST/O=IBM FHIR SERVER/L=CAMBRIDGE/ST=MA/C=US' -passin pass:hey_yoh_what -passout pass:hey_yoh_what
 
     for i in broker1 broker2 producer consumer
     do
@@ -27,24 +27,24 @@ create_kafka_ci() {
                     -keysize 4096 \
                     -keyalg RSA \
                     -validity 10960 \
-                    -storepass change-password \
-                    -keypass change-password
+                    -storepass hey_yoh_what \
+                    -keypass hey_yoh_what
 
         # Create CSR, sign the key and import back into keystore
-        keytool -keystore kafka.$i.keystore.jks -alias $i -certreq -file $i.csr -storepass change-password -keypass change-password
+        keytool -keystore kafka.$i.keystore.jks -alias $i -certreq -file $i.csr -storepass hey_yoh_what -keypass hey_yoh_what
 
-        openssl x509 -req -CA kafka-test-1.crt -CAkey kafka-test-1.key -in $i.csr -out $i-ca1-signed.crt -days 10960 -CAcreateserial -passin pass:change-password
+        openssl x509 -req -CA kafka-test-1.crt -CAkey kafka-test-1.key -in $i.csr -out $i-ca1-signed.crt -days 10960 -CAcreateserial -passin pass:hey_yoh_what
 
-        keytool -keystore kafka.$i.keystore.jks -alias CARoot -import -file kafka-test-1.crt -storepass change-password -keypass change-password -noprompt
+        keytool -keystore kafka.$i.keystore.jks -alias CARoot -import -file kafka-test-1.crt -storepass hey_yoh_what -keypass hey_yoh_what -noprompt
 
-        keytool -keystore kafka.$i.keystore.jks -alias $i -import -file $i-ca1-signed.crt -storepass change-password -keypass change-password  -noprompt
+        keytool -keystore kafka.$i.keystore.jks -alias $i -import -file $i-ca1-signed.crt -storepass hey_yoh_what -keypass hey_yoh_what  -noprompt
 
         # Create truststore and import the CA cert.
-        keytool -keystore kafka.$i.truststore.jks -alias CARoot -import -file kafka-test-1.crt -storepass change-password -keypass change-password -noprompt
+        keytool -keystore kafka.$i.truststore.jks -alias CARoot -import -file kafka-test-1.crt -storepass hey_yoh_what -keypass hey_yoh_what -noprompt
 
-    echo "change-password" > ${i}_sslkey_creds
-    echo "change-password" > ${i}_keystore_creds
-    echo "change-password" > ${i}_truststore_creds
+    echo "hey_yoh_what" > ${i}_sslkey_creds
+    echo "hey_yoh_what" > ${i}_keystore_creds
+    echo "hey_yoh_what" > ${i}_truststore_creds
     done
 
     cp $WORKSPACE/build/audit/kafka/resources/*.jks $WORKSPACE/build/notifications/kafka/resources/

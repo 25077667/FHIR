@@ -10,9 +10,9 @@ The following is a brief template of the V2 Configuration.
                 "api": {
                     "url": "https://localhost:9443/ibm/api/batch",
                     "user": "fhiradmin",
-                    "password": "change-password",
+                    "password": "hey_yoh_what",
                     "truststore": "resources/security/fhirTrustStore.p12",
-                    "truststore-password": "change-password", 
+                    "truststore-password": "hey_yoh_what", 
                     "trust-all": true
                 },
                 "cos" : { 
@@ -25,7 +25,7 @@ The following is a brief template of the V2 Configuration.
                 },
                 "page-size": 100,
                 "_comment": "max of 1000",
-                "batch-id-encryption-key": "change-password",
+                "batch-id-encryption-key": "hey_yoh_what",
                 "max-partitions": 3,
                 "iam-endpoint": "",
                 "fast-tx-timeout": 90000, 

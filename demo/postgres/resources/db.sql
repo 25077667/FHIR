@@ -5,8 +5,8 @@
 -- ###############################################################################
 
 -- Create the users
-CREATE USER fhirbatch  WITH LOGIN encrypted password 'change-password';
-CREATE USER fhirserver WITH LOGIN encrypted password 'change-password';
+CREATE USER fhirbatch  WITH LOGIN encrypted password 'hey_yoh_what';
+CREATE USER fhirserver WITH LOGIN encrypted password 'hey_yoh_what';
 
 GRANT CONNECT ON DATABASE fhirdb TO fhirserver;
 GRANT CONNECT ON DATABASE fhirdb TO fhirbatch;

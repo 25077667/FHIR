@@ -30,7 +30,7 @@ Once the fhir-server is ready, you can test it by accessing: https://localhost:9
 For example:
 
 ```sh
-curl -k -i -u 'fhiruser:change-password' 'https://localhost:9443/fhir-server/api/v4/$healthcheck'
+curl -k -i -u 'fhiruser:hey_yoh_what' 'https://localhost:9443/fhir-server/api/v4/$healthcheck'
 ```
 
 This request makes a connection to the configured database (embedded Derby by default) and a successful response will return with:

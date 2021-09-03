@@ -116,7 +116,7 @@ db.host=localhost
 db.port=5432
 db.database=fhirdb
 user=fhiradmin
-password=change-password
+password=hey_yoh_what
 EOF
     echo "Waiting..."
     sleep 60
@@ -180,7 +180,7 @@ bringup_fhir(){
     while [ $status -ne 200 -a $tries -lt 30 ]; do
         tries=$((tries + 1))
         set +o errexit
-        cmd="curl -k -o ${WORKSPACE}/health.json --max-time 5 -I -w "%{http_code}" -u fhiruser:change-password $healthcheck_url"
+        cmd="curl -k -o ${WORKSPACE}/health.json --max-time 5 -I -w "%{http_code}" -u fhiruser:hey_yoh_what $healthcheck_url"
         echo "Executing[$tries]: $cmd"
         status=$($cmd)
         set -o errexit

@@ -32,7 +32,7 @@ To create an export request, the IBM FHIR Server requires the body fields of the
 The following is a request to export data to the IBM COS endpoint from the IBM FHIR Server using GET.
 
 ```sh
-curl -k -u "fhiruser:change-password" -H "Content-Type: application/fhir+json" \
+curl -k -u "fhiruser:hey_yoh_what" -H "Content-Type: application/fhir+json" \
     -X GET 'https://localhost:9443/fhir-server/api/v4/$export?_outputFormat=application/fhir%2Bndjson&_type=Patient' -v
 ```
 
@@ -40,7 +40,7 @@ curl -k -u "fhiruser:change-password" -H "Content-Type: application/fhir+json" \
 The following is a request to export data to the IBM COS endpoint from the IBM FHIR Server using POST and Parameters resource.
 
 ```sh
-curl -k -u "fhiruser:change-password" -H "Content-Type: application/fhir+json" \
+curl -k -u "fhiruser:hey_yoh_what" -H "Content-Type: application/fhir+json" \
      -X POST 'https://localhost:9443/fhir-server/api/v4/$export' \
      -d '{
     "resourceType": "Parameters",
@@ -79,7 +79,7 @@ To import using the $import on https, one must additionally configure the `fhirS
 The following is a request to load data from the IBM COS endpoint into the IBM FHIR Server.
 
 ``` sh
-curl -k -v -X POST -u "fhiruser:change-password" \
+curl -k -v -X POST -u "fhiruser:hey_yoh_what" \
     -H 'Content-Type: application/fhir+json' 'https://localhost:9443/fhir-server/api/v4/$import' \
     -d '{
     "resourceType": "Parameters",
@@ -139,7 +139,7 @@ The following is a sample path to the exported ndjson file, the full path can be
 #### Example
 - Request
 ```sh
-curl -k -v -u "fhiruser:change-password" \
+curl -k -v -u "fhiruser:hey_yoh_what" \
     'https://localhost:9443/fhir-server/api/v4/$bulkdata-status?job=FvHrLGPv0oKZNyLzBnY5iA%3D%3D'
 ```
 - Response for `$import` or `$export` not yet complete
@@ -195,7 +195,7 @@ The Bulk Data Request is deleted using the Content-Location and executing the `D
 
 - Request
 ```sh
-curl -k -v -u "fhiruser:change-password" -X DELETE \
+curl -k -v -u "fhiruser:hey_yoh_what" -X DELETE \
     'https://localhost:9443/fhir-server/api/v4/$bulkdata-status?job=k%2Fd8cTAU%2BUeVEwqURPZ3oA%3D%3D'
 ```
 
@@ -207,4 +207,4 @@ The response returned is 200 if the job deletion is completed.
 1. For status codes, if there is an error on the server a 500 is returned, or if there is a client request error, a 400 is returned. 
 1. There are integration tests which exercise the various features of the Bulk Data Operations - `ImportOperationTest` and `ExportOperationTest`.  These integration tests are useful for testing the IBM FHIR Server, and may be useful for developers wanting to build their own tests. 
 1. Depending on the access policy of your export location, one may download the content using a command like `curl -o Patient_1.ndjson https://example.cloud.local/fhir-downloads/path-path/Patient_1.ndjson`.
-1. The use of Basic Authentication `fhiruser:change-password` is expected to be changed to match your environment authentication routine.
+1. The use of Basic Authentication `fhiruser:hey_yoh_what` is expected to be changed to match your environment authentication routine.

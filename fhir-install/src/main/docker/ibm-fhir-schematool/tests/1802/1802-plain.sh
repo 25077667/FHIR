@@ -24,10 +24,10 @@ docker-compose up -d db
 docker-compose run -e ENV_TOOL_INPUT="$(cat 1802-onboarding.json)" tool
 
 # The schemas should exist
-echo SELECT schema_name FROM information_schema.schemata | docker-compose exec -T -e PGPASSWORD=change-password db psql -h db -U postgres fhirdb
+echo SELECT schema_name FROM information_schema.schemata | docker-compose exec -T -e PGPASSWORD=hey_yoh_what db psql -h db -U postgres fhirdb
 
 # Should be 2700+
-echo 'SELECT COUNT(*) FROM FHIR_ADMIN.VERSION_HISTORY' | docker-compose exec -T -e PGPASSWORD=change-password db psql -h db -U postgres fhirdb
+echo 'SELECT COUNT(*) FROM FHIR_ADMIN.VERSION_HISTORY' | docker-compose exec -T -e PGPASSWORD=hey_yoh_what db psql -h db -U postgres fhirdb
 
 docker-compose down -t 1
 # EOF

@@ -8,7 +8,7 @@
              serverName="db2"
              portNumber="50000"
              user="fhirserver"
-             password="change-password"
+             password="hey_yoh_what"
              databaseName="FHIRDB"
              currentSchema="FHIRDATA"
              driverType="4"

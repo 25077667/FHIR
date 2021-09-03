@@ -73,10 +73,10 @@
                     "ssl.truststore.location": "/config/config/default/kafka.producer.truststore.jks",
                     "ssl.client.auth": "requested",
                     "ssl.keystore.credentials": "/config/config/default/producer_keystore_creds",
-                    "ssl.keystore.password": "change-password",
+                    "ssl.keystore.password": "hey_yoh_what",
                     "security.inter.broker.protocol": "SSL",
-                    "ssl.key.password": "change-password",
-                    "ssl.truststore.password": "change-password",
+                    "ssl.key.password": "hey_yoh_what",
+                    "ssl.truststore.password": "hey_yoh_what",
                     "ssl.truststore.filename": "/config/config/default/kafka.producer.truststore.jks",
                     "ssl.truststore.credentials": "/config/config/default/producer_truststore_creds",
                     "acks": "all",
@@ -94,9 +94,9 @@
                 "servers": "nats://nats-node1:4222,nats://nats-node2:4222,nats://nats-node3:4222",
                 "useTLS": false,
                 "truststoreLocation": "resources/security/nats.client.truststore.jks",
-                "truststorePassword": "change-password",
+                "truststorePassword": "hey_yoh_what",
                 "keystoreLocation": "resources/security/nats.client.keystore.jks",
-                "keystorePassword": "change-password"
+                "keystorePassword": "hey_yoh_what"
             }
         },
         "audit": {
@@ -120,10 +120,10 @@
                     "ssl.truststore.location": "/config/config/default/kafka.producer.truststore.jks",
                     "ssl.client.auth": "requested",
                     "ssl.keystore.credentials": "/config/config/default/producer_keystore_creds",
-                    "ssl.keystore.password": "change-password",
+                    "ssl.keystore.password": "hey_yoh_what",
                     "security.inter.broker.protocol": "SSL",
-                    "ssl.key.password": "change-password",
-                    "ssl.truststore.password": "change-password",
+                    "ssl.key.password": "hey_yoh_what",
+                    "ssl.truststore.password": "hey_yoh_what",
                     "ssl.truststore.filename": "/config/config/default/kafka.producer.truststore.jks",
                     "ssl.truststore.credentials": "/config/config/default/producer_truststore_creds"
                 }

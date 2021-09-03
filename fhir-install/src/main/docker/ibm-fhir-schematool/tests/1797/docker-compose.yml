@@ -4,7 +4,7 @@ services:
     image: postgres:12.5
     restart: always
     environment:
-      POSTGRES_PASSWORD: change-password
+      POSTGRES_PASSWORD: hey_yoh_what
       POSTGRES_USER: postgres
       POSTGRES_DB: fhirdb
       PGDATA: /data/postgres
@@ -24,7 +24,7 @@ services:
     image: ibmcom/ibm-fhir-schematool:latest
     restart: always
     environment:
-      PLACEHOLDER: change-password
+      PLACEHOLDER: hey_yoh_what
     tty: true
     stdin_open: true
     hostname: tool

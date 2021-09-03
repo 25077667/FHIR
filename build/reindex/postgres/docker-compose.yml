@@ -49,14 +49,14 @@ services:
         target: /opt/ol/wlp/usr/servers/defaultServer/userlib
         read_only: true
     command: bash -c "
-      java -jar /opt/ibm-fhir-server/tools/fhir-persistence-schema-*-cli.jar --db-type postgresql --prop db.host=postgres_postgres_1 --prop db.port=5432 --prop db.database=fhirdb --prop user=fhiradmin --prop password=change-password --update-schema --grant-to fhirserver &&
+      java -jar /opt/ibm-fhir-server/tools/fhir-persistence-schema-*-cli.jar --db-type postgresql --prop db.host=postgres_postgres_1 --prop db.port=5432 --prop db.database=fhirdb --prop user=fhiradmin --prop password=hey_yoh_what --update-schema --grant-to fhirserver &&
       /opt/ol/wlp/bin/server run"
     healthcheck:
       start_period: 32s
       interval: 30s
       timeout: 5s
       retries: 3
-      test: curl -k -u 'fhiruser:change-password' 'https://localhost:9443/fhir-server/api/v4/$$healthcheck'
+      test: curl -k -u 'fhiruser:hey_yoh_what' 'https://localhost:9443/fhir-server/api/v4/$$healthcheck'
     ports:
       - 9080:9080
       - 9443:9443

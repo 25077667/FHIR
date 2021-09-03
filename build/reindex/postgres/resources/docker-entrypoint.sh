@@ -39,7 +39,7 @@ EOF
 
     su - postgres -c '/usr/local/bin/pg_ctl -D "/db/data" --wait --timeout=120 start'
     # Create the FHIRADMIN user
-    su - postgres -c "/usr/local/bin/psql -c \"CREATE USER fhiradmin WITH LOGIN encrypted password 'change-password';\""
+    su - postgres -c "/usr/local/bin/psql -c \"CREATE USER fhiradmin WITH LOGIN encrypted password 'hey_yoh_what';\""
     # Create the Database
     su - postgres -c "/usr/local/bin/psql -c \"CREATE DATABASE fhirdb OWNER 'fhiradmin';\""
     su - postgres -c '/usr/local/bin/psql --dbname=fhirdb -v ON_ERROR_STOP=1 < /docker-entrypoint-initdb.d/db.sql'

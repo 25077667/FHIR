@@ -11,7 +11,7 @@ The Audit Kafka jks are updated separately.
 
 This script should be run first, and subsequently each type of certificate / service must update their cert/key. 
 
-1. Set `export CHANGE_PASSWORD=change-password`
+1. Set `export CHANGE_PASSWORD=hey_yoh_what`
 
 2. Set `export WORKSPACE=$(pwd)`
 
@@ -70,7 +70,7 @@ build/notifications/kafka/resources/kafka.producer.truststore.jks
 build/notifications/kafka/resources/kafka.broker1.truststore.jks
 ```
 
-1. Set `export CHANGE_PASSWORD=change-password`
+1. Set `export CHANGE_PASSWORD=hey_yoh_what`
 
 2. Set `export WORKSPACE=$(pwd)`
 

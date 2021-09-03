@@ -98,7 +98,7 @@ status=0
 while [ $status -ne 200 -a $tries -lt ${MAX_TRIES} ]; do
     tries=$((tries + 1))
     set +o errexit
-    cmd="curl --max-time 60 -sS -k -o ${WORKSPACE}/health.json -I -w %{http_code} -u fhiruser:change-password $healthcheck_url"
+    cmd="curl --max-time 60 -sS -k -o ${WORKSPACE}/health.json -I -w %{http_code} -u fhiruser:hey_yoh_what $healthcheck_url"
     echo "Executing[$tries]: $cmd"
     status=$($cmd)
     set -o errexit

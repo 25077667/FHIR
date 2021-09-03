@@ -55,7 +55,7 @@ import jakarta.json.JsonReaderFactory;
  * These tests exercise the $import operation a bulkdata proposal
  *
  * <pre>
- * curl -k -v -X POST -u "fhiruser:change-password" -H 'Content-Type: application/fhir+json' 'https://localhost:9443/fhir-server/api/v4/$import' -d '{
+ * curl -k -v -X POST -u "fhiruser:hey_yoh_what" -H 'Content-Type: application/fhir+json' 'https://localhost:9443/fhir-server/api/v4/$import' -d '{
     "resourceType": "Parameters",
     "id": "30321130-5032-49fb-be54-9b8b82b2445a",
     "parameter": [
@@ -89,9 +89,9 @@ import jakarta.json.JsonReaderFactory;
 
 grab content-location
 
-curl 'https://localhost:9443/fhir-server/api/v4/$bulkdata-status?job=FvHrLGPv0oKZNyLzBnY5iA%3D%3D' -k -u "fhiruser:change-password" -v
+curl 'https://localhost:9443/fhir-server/api/v4/$bulkdata-status?job=FvHrLGPv0oKZNyLzBnY5iA%3D%3D' -k -u "fhiruser:hey_yoh_what" -v
 
-curl -X DELETE 'https://localhost:9443/fhir-server/api/v4/$bulkdata-status?job=k%2Fd8cTAU%2BUeVEwqURPZ3oA%3D%3D' -k -u "fhiruser:change-password" -v
+curl -X DELETE 'https://localhost:9443/fhir-server/api/v4/$bulkdata-status?job=k%2Fd8cTAU%2BUeVEwqURPZ3oA%3D%3D' -k -u "fhiruser:hey_yoh_what" -v
  * </pre>
  */
 public class ImportOperationTest extends FHIRServerTestBase {

@@ -6,7 +6,7 @@
                 "port": "50000",
                 "database": "fhirdb",
                 "user": "postgres",
-                "password": "change-password",
+                "password": "hey_yoh_what",
                 "type": "postgresql",
                 "ssl": "false",
                 "certificate_base64": "empty"

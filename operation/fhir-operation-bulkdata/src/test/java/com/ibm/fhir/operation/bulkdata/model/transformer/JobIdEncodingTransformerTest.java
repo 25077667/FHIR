@@ -52,7 +52,7 @@ public class JobIdEncodingTransformerTest {
 
     @Test
     public void testTransformerRoundTrip() throws Exception {
-        // Using the legacy implementation for the configuration the encode/decode uses change-password
+        // Using the legacy implementation for the configuration the encode/decode uses hey_yoh_what
         final JobIdEncodingTransformer transformer = JobIdEncodingTransformer.getInstance();
 
         String jobId = transformer.decodeJobId("1");

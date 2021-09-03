@@ -4,7 +4,7 @@ services:
     image: ibmcom/db2:11.5.5.1
     restart: always
     environment:
-      DB2INST1_PASSWORD: change-password
+      DB2INST1_PASSWORD: hey_yoh_what
       LICENSE: accept
       DBNAME: fhirdb
     shm_size: 256MB
@@ -21,7 +21,7 @@ services:
     image: ibmcom/ibm-fhir-schematool:latest
     restart: always
     environment:
-      PLACEHOLDER: change-password
+      PLACEHOLDER: hey_yoh_what
     tty: true
     stdin_open: true
     hostname: tool

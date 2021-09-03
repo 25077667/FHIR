@@ -150,7 +150,7 @@ public class FHIRNotificationServiceClientEndpoint extends Endpoint {
                 ClientEndpointConfig.Builder.create().configurator(new Configurator() {
                     public void beforeRequest(Map<String, List<String>> headers) {
                         String encoding =
-                                Base64.getEncoder().encodeToString("fhiruser:change-password".getBytes());
+                                Base64.getEncoder().encodeToString("fhiruser:hey_yoh_what".getBytes());
                         List<String> values = new ArrayList<String>();
                         values.add("Basic " + encoding);
                         headers.put("Authorization", values);

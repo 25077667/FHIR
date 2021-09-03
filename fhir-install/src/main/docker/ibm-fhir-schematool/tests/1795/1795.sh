@@ -29,25 +29,25 @@ docker-compose up -d db
 docker-compose run tool --tool.behavior=onboard --db.type=postgresql  \
     --db.host=db --db.port=5432 --db.database=fhirdb --schema.name.fhir=fhirdata3 \
     --schema.name.batch=fhirbatch3 --schema.name.oauth=fhiroauth3 \
-    --user=postgres --password=change-password
+    --user=postgres --password=hey_yoh_what
 
 # schemas that end with 43, except for oauth as default
 docker-compose run tool --tool.behavior=onboard --db.type=postgresql  \
     --db.host=db --db.port=5432 --db.database=fhirdb --schema.name.fhir=fhirdata43 \
     --schema.name.batch=fhirbatch43 \
-    --user=postgres --password=change-password
+    --user=postgres --password=hey_yoh_what
 
 # schemas that uses all defaults
 docker-compose run tool --tool.behavior=onboard --db.type=postgresql  \
     --db.host=db --db.port=5432 --db.database=fhirdb \
-    --user=postgres --password=change-password
+    --user=postgres --password=hey_yoh_what
 
 # # schemas that end with 50 for fhirdata only
 docker-compose run tool --tool.behavior=onboard --db.type=postgresql  \
     --db.host=db --db.port=5432 --db.database=fhirdb --schema.name.fhir=fhirdata50 \
-    --user=postgres --password=change-password
+    --user=postgres --password=hey_yoh_what
 
-echo SELECT schema_name FROM information_schema.schemata | docker-compose exec -T -e PGPASSWORD=change-password db psql -h db -U postgres fhirdb
+echo SELECT schema_name FROM information_schema.schemata | docker-compose exec -T -e PGPASSWORD=hey_yoh_what db psql -h db -U postgres fhirdb
 
 docker-compose down -t 1
 # EOF

@@ -27,13 +27,13 @@ import com.ibm.fhir.server.test.FHIRServerTestBase;
  * These tests exercise the $lookup operation on a CodeSystem
  *
  * <pre>
- * curl -k -v -X POST -u "fhiruser:change-password" -H 'Content-Type: application/fhir+json' -d {@literal @}src/test/resources/testdata/CodeSystem.json 'https://localhost:9443/fhir-server/api/v4'
+ * curl -k -v -X POST -u "fhiruser:hey_yoh_what" -H 'Content-Type: application/fhir+json' -d {@literal @}src/test/resources/testdata/CodeSystem.json 'https://localhost:9443/fhir-server/api/v4'
  *
- * curl -k -u "fhiruser:change-password" -v 'https://localhost:9443/fhir-server/api/v4/CodeSystem/$lookup?http://hl7.org/fhir/CodeSystem/example&amp;code=chol'
+ * curl -k -u "fhiruser:hey_yoh_what" -v 'https://localhost:9443/fhir-server/api/v4/CodeSystem/$lookup?http://hl7.org/fhir/CodeSystem/example&amp;code=chol'
  *
- * curl -k -u "fhiruser:change-password" -v 'https://localhost:9443/fhir-server/api/v4/CodeSystem/$lookup?http://hl7.org/fhir/CodeSystem/example&amp;code=INVALID'
+ * curl -k -u "fhiruser:hey_yoh_what" -v 'https://localhost:9443/fhir-server/api/v4/CodeSystem/$lookup?http://hl7.org/fhir/CodeSystem/example&amp;code=INVALID'
  *
- * curl -k -u "fhiruser:change-password" -v 'https://localhost:9443/fhir-server/api/v4/CodeSystem/$lookup?system=INVALID&amp;code=chol'
+ * curl -k -u "fhiruser:hey_yoh_what" -v 'https://localhost:9443/fhir-server/api/v4/CodeSystem/$lookup?system=INVALID&amp;code=chol'
  *
  * </pre>
  */

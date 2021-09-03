@@ -7,7 +7,7 @@ Retrieved on 08 SEPT 2020
 Check the Profiles are on the system: 
 
 ```
-$ curl -ks -u fhiruser:change-password https://localhost:9443/fhir-server/api/v4/metadata 2>&1 | jq -r '.rest[].resource[] | "\(.type),\(.supportedProfile)"' | grep -i hrex
+$ curl -ks -u fhiruser:hey_yoh_what https://localhost:9443/fhir-server/api/v4/metadata 2>&1 | jq -r '.rest[].resource[] | "\(.type),\(.supportedProfile)"' | grep -i hrex
 Coverage,["http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage|0.2.0","http://hl7.org/fhir/us/carin/StructureDefinition/carin-bb-coverage|0.1.0"]
 Organization,["http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Network|0.3.0","http://hl7.org/fhir/us/carin/StructureDefinition/carin-bb-organization|0.1.0","http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization|0.3.0","http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-organization|0.2.0","http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|3.1.1"]
 Parameters,["http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-parameters-member-match-out|0.2.0","http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-parameters-member-match-in|0.2.0"]

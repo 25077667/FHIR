@@ -30,10 +30,10 @@
                     "bootstrap.servers":"localhost:9093",
                     "security.protocol":"SSL",
                     "ssl.truststore.location":"resources/security/kafka.client.truststore.p12",
-                    "ssl.truststore.password":"change-password",
+                    "ssl.truststore.password":"hey_yoh_what",
                     "ssl.keystore.location":"resources/security/kafka.client.keystore.p12",
-                    "ssl.keystore.password":"change-password",
-                    "ssl.key.password":"change-password",
+                    "ssl.keystore.password":"hey_yoh_what",
+                    "ssl.key.password":"hey_yoh_what",
                     "ssl.truststore.type":"PKCS12",
                     "ssl.keystore.type":"PKCS12"
                 }

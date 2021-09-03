@@ -6,7 +6,7 @@
                 "port": "50000",
                 "database": "fhirdb",
                 "user": "db2inst1",
-                "password": "change-password",
+                "password": "hey_yoh_what",
                 "type": "db2",
                 "ssl": "false",
                 "certificate_base64": "empty"
