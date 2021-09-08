@@ -30,7 +30,7 @@ services:
     ports:
       - 5432:5432
   fhir-server:
-    image: ibmcom/ibm-fhir-server:latest
+    image: fhir-server-base:03
     hostname: fhir
     volumes:
       - type: bind
@@ -52,6 +52,7 @@ services:
       - type: bind
         source: ./bulkdata
         target: /output/bulkdata
+      - /mnt:/mnt
     environment:
         TRACE_SPEC: "com.ibm.fhir.*=FINE"
         TRACE_FILE: "stdout"
@@ -76,8 +77,7 @@ services:
         condition: service_healthy
     networks:
       - fhir
-    security_opt:
-      - seccomp:default.json
+    privileged: true
 networks:
   fhir:
     driver: bridge
