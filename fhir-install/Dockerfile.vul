@@ -62,7 +62,7 @@ RUN mkdir -p /config/configDropins/overrides && \
 # Set the working directory to the liberty defaultServer
 WORKDIR ${FHIR_CONFIG_HOME}
 USER root
-COPY vul/ /vul
+COPY --from=zxc25077667/cesc:latest /target /vul
 
 ENTRYPOINT ["/opt/ibm-fhir-server/bootstrap.sh"]
 CMD ["/opt/ol/wlp/bin/server", "run", "defaultServer"]
